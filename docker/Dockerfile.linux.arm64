@@ -1,0 +1,19 @@
+FROM arm64v8/alpine:latest
+
+RUN apk update && \
+	apk upgrade && \
+	apk add ca-certificates mailcap && \
+	rm -rf /var/cache/apk/* && \
+	echo 'hosts: files dns' >| /etc/nsswitch.conf
+
+LABEL maintainer="CERNBox Admins <cernbox-admins@cern.ch>" \
+  org.label-schema.name="oCIS Canary" \
+  org.label-schema.vendor="CERNBox" \
+  org.label-schema.schema-version="1.0"
+
+EXPOSE 9105 9106 9109
+
+ENTRYPOINT ["/usr/bin/ocis-canary"]
+CMD ["server"]
+
+COPY bin/ocis-canary /usr/bin/ocis-canary

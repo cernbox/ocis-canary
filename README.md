@@ -1,1 +1,1 @@
-# ocis-canary
+# CERNBox Canary for OCIS

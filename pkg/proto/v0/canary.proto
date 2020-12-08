@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package proto;
+option go_package = "proto";
+
+import "google/api/annotations.proto";
+import "protoc-gen-swagger/options/annotations.proto";
+
+option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
+	info: {
+		title: "Canary";
+		version: "1.0";
+		contact: {
+			name: "ownCloud GmbH";
+			url: "https://github.com/cernbox/ocis-canary";
+			email: "support@owncloud.com";
+		};
+		license: {
+			name: "Apache-2.0";
+			url: "https://github.com/cernbox/ocis-canary/blob/master/LICENSE";
+		};
+	};
+	schemes: HTTP;
+	schemes: HTTPS;
+	consumes: "application/json";
+	produces: "application/json";
+	external_docs: {
+	};
+};
+
+service Canary {
+	rpc SetCanary(CanaryRequest) returns (CanaryResponse) {
+		option (google.api.http) = {
+			post: "/api/v0/canary"
+			body: "*"
+		};
+	}
+}
+
+message CanaryRequest {
+	string version = 1;
+}
+
+message CanaryResponse {
+	string err = 1;
+	int32 ttl = 2;
+	string cookie = 3;
+}
