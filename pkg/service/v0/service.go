@@ -53,7 +53,7 @@ func (s Canary) SetCanary(ctx context.Context, req *v0proto.CanaryRequest, rsp *
 
 	u, ok := revauser.ContextGetUser(ctx)
 	if !ok {
-		return ErrMissingVersion
+		return ErrNoUser
 	}
 
 	s.logger.Info().

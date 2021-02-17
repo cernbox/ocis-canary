@@ -38,7 +38,7 @@ export const request = (method, url, body, queryParameters, form, config) => {
 export const Canary_SetCanary = function(parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain()
   const config = parameters.$config
-  let path = '/api/v0/canary'
+  let path = 'api/v0/canary'
   let body
   let queryParameters = {}
   let form = {}
