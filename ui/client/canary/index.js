@@ -56,7 +56,7 @@ export const Canary_SetCanary = function(parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config)
 }
 export const Canary_SetCanary_RAW_URL = function() {
-  return '/api/v0/canary'
+  return 'api/v0/canary'
 }
 export const Canary_SetCanary_TYPE = function() {
   return 'post'
@@ -64,7 +64,7 @@ export const Canary_SetCanary_TYPE = function() {
 export const Canary_SetCanaryURL = function(parameters = {}) {
   let queryParameters = {}
   const domain = parameters.$domain ? parameters.$domain : getDomain()
-  let path = '/api/v0/canary'
+  let path = 'api/v0/canary'
   if (parameters.$queryParameters) {
     Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
       queryParameters[parameterName] = parameters.$queryParameters[parameterName]
