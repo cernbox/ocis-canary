@@ -1,6 +1,7 @@
 package http
 
 import (
+	"github.com/asim/go-micro/v3"
 	"github.com/cernbox/ocis-canary/pkg/assets"
 	"github.com/cernbox/ocis-canary/pkg/proto/v0"
 	svc "github.com/cernbox/ocis-canary/pkg/service/v0"
@@ -66,13 +67,10 @@ func Server(opts ...Option) http.Service {
 		proto.RegisterCanaryWeb(r, handle)
 	})
 
-	service.Handle(
-		"/",
-		mux,
-	)
-
-	if err := service.Init(); err != nil {
+	if err := micro.RegisterHandler(service.Server(), mux); err != nil {
 		panic(err)
 	}
+
+	service.Init()
 	return service
 }
