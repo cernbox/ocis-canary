@@ -3,7 +3,7 @@ package svc
 import (
 	"context"
 
-	v0proto "github.com/cernbox/ocis-canary/pkg/proto/v0"
+	v0proto "github.com/cernbox/ocis-canary/pkg/proto/v0/github.com/ocis-canary"
 	"go.opencensus.io/trace"
 )
 

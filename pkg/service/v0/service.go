@@ -7,7 +7,7 @@ import (
 	"fmt"
 
 	"github.com/cernbox/ocis-canary/pkg/config"
-	v0proto "github.com/cernbox/ocis-canary/pkg/proto/v0"
+	v0proto "github.com/cernbox/ocis-canary/pkg/proto/v0/github.com/ocis-canary"
 	revauser "github.com/cs3org/reva/pkg/user"
 	"github.com/owncloud/ocis/ocis-pkg/log"
 

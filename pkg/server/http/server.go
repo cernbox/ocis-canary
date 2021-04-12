@@ -3,7 +3,7 @@ package http
 import (
 	"github.com/asim/go-micro/v3"
 	"github.com/cernbox/ocis-canary/pkg/assets"
-	"github.com/cernbox/ocis-canary/pkg/proto/v0"
+	"github.com/cernbox/ocis-canary/pkg/proto/v0/github.com/ocis-canary"
 	svc "github.com/cernbox/ocis-canary/pkg/service/v0"
 	"github.com/cernbox/ocis-canary/pkg/version"
 	"github.com/go-chi/chi"

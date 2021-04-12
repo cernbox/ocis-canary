@@ -2,6 +2,7 @@ package command
 
 import (
 	"context"
+	"flag"
 	"os"
 	"os/signal"
 	"strings"
@@ -18,10 +19,12 @@ import (
 	"github.com/cernbox/ocis-canary/pkg/server/http"
 	"github.com/micro/cli/v2"
 	"github.com/oklog/run"
+	ociscfg "github.com/owncloud/ocis/ocis-pkg/config"
 	openzipkin "github.com/openzipkin/zipkin-go"
 	zipkinhttp "github.com/openzipkin/zipkin-go/reporter/http"
 	"go.opencensus.io/stats/view"
 	"go.opencensus.io/trace"
+	"github.com/thejerf/suture/v4"
 )
 
 // Server is the entrypoint for the server command.
@@ -235,4 +238,42 @@ func Server(cfg *config.Config) *cli.Command {
 			return gr.Run()
 		},
 	}
+}
+
+
+// CERNBoxCanaryService allows for the ocis-canary command to be embedded and supervised by a suture supervisor tree.
+type CERNBoxCanaryService struct {
+	cfg *config.Config
+}
+
+// NewCERNBoxCanaryService creates a new CERNBoxCanaryService
+func NewCERNBoxCanaryService(cfg *ociscfg.Config) suture.Service {
+	c := config.New()
+	if cfg.Mode == 0 {
+		c.Supervised = true
+	}
+	return CERNBoxCanaryService{
+		cfg: c,
+	}
+}
+
+func (s CERNBoxCanaryService) Serve(ctx context.Context) error {
+	s.cfg.Context = ctx
+	f := &flag.FlagSet{}
+	for k := range Server(s.cfg).Flags {
+		if err := Server(s.cfg).Flags[k].Apply(f); err != nil {
+			return err
+		}
+	}
+	cliCtx := cli.NewContext(nil, f, nil)
+	if Server(s.cfg).Before != nil {
+		if err := Server(s.cfg).Before(cliCtx); err != nil {
+			return err
+		}
+	}
+	if err := Server(s.cfg).Action(cliCtx); err != nil {
+		return err
+	}
+
+	return nil
 }
