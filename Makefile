@@ -164,7 +164,7 @@ $(GOPATH)/bin/protoc-gen-go:
 	GO111MODULE=off go get -v github.com/golang/protobuf/protoc-gen-go
 
 $(GOPATH)/bin/protoc-gen-micro:
-	GO111MODULE=on go get -v github.com/micro/protoc-gen-micro/v2
+	GO111MODULE=on go get -v github.com/asim/go-micro/cmd/protoc-gen-micro/v3
 
 $(GOPATH)/bin/protoc-gen-microweb:
 	GO111MODULE=off go get -v github.com/webhippie/protoc-gen-microweb
