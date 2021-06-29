@@ -31,7 +31,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/protoCanaryResponse"
+              "$ref": "#/definitions/v0CanaryResponse"
             }
           },
           "default": {
@@ -47,7 +47,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/protoCanaryRequest"
+              "$ref": "#/definitions/v0CanaryRequest"
             }
           }
         ],
@@ -58,29 +58,6 @@
     }
   },
   "definitions": {
-    "protoCanaryRequest": {
-      "type": "object",
-      "properties": {
-        "version": {
-          "type": "string"
-        }
-      }
-    },
-    "protoCanaryResponse": {
-      "type": "object",
-      "properties": {
-        "err": {
-          "type": "string"
-        },
-        "ttl": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "cookie": {
-          "type": "string"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -114,6 +91,29 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v0CanaryRequest": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "v0CanaryResponse": {
+      "type": "object",
+      "properties": {
+        "err": {
+          "type": "string"
+        },
+        "ttl": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "cookie": {
+          "type": "string"
         }
       }
     }

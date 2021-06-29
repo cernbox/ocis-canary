@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	v0proto "github.com/cernbox/ocis-canary/pkg/proto/v0/github.com/ocis-canary"
+	v0proto "github.com/cernbox/ocis-canary/pkg/proto/v0/github.com/cernbox/ocis-canary/pkg/proto/v0"
 	"github.com/owncloud/ocis/ocis-pkg/log"
 )
 

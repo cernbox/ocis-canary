@@ -1,7 +1,7 @@
 package grpc
 
 import (
-	"github.com/cernbox/ocis-canary/pkg/proto/v0/github.com/ocis-canary"
+	"github.com/cernbox/ocis-canary/pkg/proto/v0/github.com/cernbox/ocis-canary/pkg/proto/v0"
 	svc "github.com/cernbox/ocis-canary/pkg/service/v0"
 	"github.com/cernbox/ocis-canary/pkg/version"
 	"github.com/owncloud/ocis/ocis-pkg/service/grpc"

@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	v0proto "github.com/cernbox/ocis-canary/pkg/proto/v0/github.com/ocis-canary"
+	v0proto "github.com/cernbox/ocis-canary/pkg/proto/v0/github.com/cernbox/ocis-canary/pkg/proto/v0"
 )
 
 func TestCanary_SetCanaryt(t *testing.T) {

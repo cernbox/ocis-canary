@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/cernbox/ocis-canary/pkg/metrics"
-	v0proto "github.com/cernbox/ocis-canary/pkg/proto/v0/github.com/ocis-canary"
+	v0proto "github.com/cernbox/ocis-canary/pkg/proto/v0/github.com/cernbox/ocis-canary/pkg/proto/v0"
 	"github.com/prometheus/client_golang/prometheus"
 )
 
