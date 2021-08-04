@@ -38,6 +38,8 @@ require (
 
 replace (
 	github.com/crewjam/saml => github.com/crewjam/saml v0.4.5
+	github.com/owncloud/ocis => /root/ocis
+	github.com/owncloud/ocis/ocis-pkg => github.com/owncloud/ocis v1.9.1-0.20210804055949-69dfdeac0d9c
 	go.etcd.io/etcd/api/v3 => go.etcd.io/etcd/api/v3 v3.0.0-20210204162551-dae29bb719dd
 	go.etcd.io/etcd/pkg/v3 => go.etcd.io/etcd/pkg/v3 v3.0.0-20210204162551-dae29bb719dd
 )
