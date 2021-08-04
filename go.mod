@@ -16,13 +16,11 @@ require (
 	github.com/golang/protobuf v1.5.2
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0
 	github.com/haya14busa/goverage v0.0.0-20180129164344-eec3514a20b5
-	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51 // indirect
 	github.com/micro/cli/v2 v2.1.2
 	github.com/mitchellh/gox v1.0.1
-	github.com/ogier/pflag v0.0.1 // indirect
 	github.com/oklog/run v1.1.0
 	github.com/openzipkin/zipkin-go v0.2.5
-	github.com/owncloud/ocis v1.9.1-0.20210804055949-69dfdeac0d9c
+	github.com/owncloud/ocis/ocis-pkg v0.0.0-20210216094451-dc73176dc62d
 	github.com/prometheus/client_golang v1.10.0
 	github.com/restic/calens v0.2.0
 	github.com/spf13/viper v1.8.1
@@ -32,14 +30,14 @@ require (
 	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616
 	golang.org/x/net v0.0.0-20210614182718-04defd469f4e
 	google.golang.org/genproto v0.0.0-20210624195500-8bfb893ecb84
+	google.golang.org/grpc/examples v0.0.0-20210803221256-6ba56c814be7 // indirect
 	google.golang.org/protobuf v1.27.1
 	honnef.co/go/tools v0.1.1
 )
 
 replace (
-	github.com/crewjam/saml => github.com/crewjam/saml v0.4.5
-	github.com/owncloud/ocis => /root/ocis
-	github.com/owncloud/ocis/ocis-pkg => github.com/owncloud/ocis v1.9.1-0.20210804055949-69dfdeac0d9c
+	github.com/owncloud/ocis => github.com/cernbox/ocis v0.0.0-20210804114859-0317150cd4e8
+	github.com/owncloud/ocis/ocis-pkg => github.com/cernbox/ocis/ocis-pkg v0.0.0-20210804114859-0317150cd4e8
 	go.etcd.io/etcd/api/v3 => go.etcd.io/etcd/api/v3 v3.0.0-20210204162551-dae29bb719dd
 	go.etcd.io/etcd/pkg/v3 => go.etcd.io/etcd/pkg/v3 v3.0.0-20210204162551-dae29bb719dd
 )
